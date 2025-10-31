@@ -1,0 +1,657 @@
+/* ============================================= */
+/* ESTILOS.CSS - GARMENDIA Y CÍA S.A. */
+/* ============================================= */
+
+/* --- 1. CONFIGURACIÓN BASE Y VARIABLES --- */
+:root {
+  /* Paleta de Colores (Corporativo) */
+  --color-primario: #0b2545; /* Azul oscuro corporativo */
+  --color-secundario: #134074; /* Azul hover */
+  --color-fondo: #ffffff;
+  --color-fondo-alternativo: #f5f5f5;
+  --color-texto-principal: #333333;
+  --color-texto-secundario: #ffffff;
+  --color-borde-suave: #e0e0e0;
+
+  /* Tipografía */
+  --font-titulo: "Montserrat", sans-serif;
+  --font-texto: "Open Sans", sans-serif;
+
+  /* Responsive */
+  --header-height: 80px;
+}
+
+/* Reseteo Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  font-family: var(--font-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+  /* Agrega padding al top para compensar el header fijo */
+  padding-top: var(--header-height);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primario);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-secundario);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- 2. UTILIDADES (Contenedores) --- */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-full {
+  width: 100%;
+  padding: 4rem 0;
+}
+
+/* Subtítulos de sección */
+.subtitulo-seccion {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* --- 3. BOTONES --- */
+.btn {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: var(--color-texto-secundario);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-texto-secundario);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 4. HEADER Y NAVEGAClÓN --- */
+.header-fijo {
+  width: 100%;
+  background-color: var(--color-fondo);
+  border-bottom: 1px solid var(--color-borde-suave);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo img {
+  height: 12rem;
+  width: auto;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  font-family: var(--font-titulo);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--color-primario);
+  border-bottom-color: var(--color-primario);
+}
+
+/* Ocultos en desktop */
+#menu-toggle,
+.menu-icon {
+  display: none;
+}
+
+/* --- 5. SECCIÓN HERO --- */
+.hero {
+  height: calc(85vh - var(--header-height));
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-texto-secundario);
+  position: relative;
+  background-image: url("assets/puerto-aduanero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Overlay para legibilidad */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 37, 69, 0.7); /* Overlay azul oscuro */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+}
+
+.hero-titulo {
+  font-size: 3rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitulo {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+/* --- 6. SECCIÓN NOSOTROS --- */
+.seccion-nosotros {
+  padding: 4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nosotros-texto {
+  flex: 1;
+}
+
+.nosotros-imagen {
+  flex: 1;
+}
+
+.nosotros-imagen img {
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 7. SECCIÓN SERVICIOS --- */
+.seccion-servicios {
+  background-color: var(--color-fondo-alternativo);
+}
+
+.seccion-servicios h2 {
+  text-align: center;
+}
+
+.grid-servicios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card-servicio {
+  flex-basis: 350px; /* Base para 3 columnas */
+  flex-grow: 1;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(11, 37, 69, 0.1);
+  border-color: var(--color-primario);
+}
+
+.icono-servicio {
+  width: 50px;
+  height: 50px;
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+
+.card-servicio h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card-servicio p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* --- 8. SECCIÓN CLIENTES --- */
+.seccion-clientes {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.grid-clientes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card-cliente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 150px;
+  padding: 1rem;
+  height: 116px;
+  width: 150px;
+  border: 1px solid var(--color-borde-suave);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  scale: 1.05;
+}
+
+.card-cliente:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 9. SECCIÓN CONTACTO (Estilos base) --- */
+/* (Sección 9.5 eliminada) */
+
+/* --- 10. FOOTER --- */
+.footer-principal {
+  background-color: var(--color-primario);
+  color: var(--color-texto-secundario);
+  padding: 2rem 0;
+  margin-top: 0; /* Ya que la sección contacto tiene fondo */
+}
+
+.layout-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer-copyright p {
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+
+.footer-enlaces ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-enlaces a {
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  text-transform: uppercase;
+}
+
+.footer-enlaces a:hover {
+  color: var(--color-fondo);
+}
+
+/* ============================================= */
+/* --- 11. RESPONSIVE DESIGN (Media Queries) --- */
+/* ============================================= */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .seccion-nosotros {
+    flex-direction: column-reverse; /* Imagen arriba, texto abajo */
+  }
+
+  .layout-contacto {
+    flex-direction: column;
+  }
+
+  .card-servicio {
+    flex-basis: calc(50% - 0.75rem); /* 2 columnas */
+  }
+}
+
+/* Móviles (< 768px) */
+@media (max-width: 768px) {
+  html {
+    /* Ajusta el scroll-padding para el header móvil más pequeño */
+    scroll-padding-top: 60px;
+  }
+
+  body {
+    padding-top: 60px; /* Altura del header móvil */
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+  .hero-titulo {
+    font-size: 2.2rem;
+  }
+  .hero-subtitulo {
+    font-size: 1.1rem;
+  }
+
+  .header-fijo {
+    height: 60px; /* Header más pequeño en móvil */
+  }
+
+  .logo img {
+    height: 10rem;
+  }
+
+  /* --- Menú Hamburguesa --- */
+  .menu-icon {
+    display: block;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .menu-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--color-primario);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transition: 0.25s ease-in-out;
+  }
+
+  .menu-icon span:nth-child(1) {
+    top: 0px;
+  }
+  .menu-icon span:nth-child(2) {
+    top: 9px;
+  }
+  .menu-icon span:nth-child(3) {
+    top: 18px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px; /* Debajo del header */
+    right: 0;
+    width: 80%;
+    height: calc(100vh - 60px);
+    background-color: var(--color-fondo);
+    border-left: 1px solid var(--color-borde-suave);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 1rem;
+  }
+
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-borde-suave);
+  }
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    background-color: var(--color-fondo-alternativo);
+    border-bottom-color: var(--color-borde-suave); /* Sin borde azul */
+  }
+
+  /* Toggle del menú */
+  #menu-toggle:checked ~ .nav-menu {
+    transform: translateX(0);
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(1) {
+    top: 9px;
+    transform: rotate(135deg);
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+    left: -30px;
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(3) {
+    top: 9px;
+    transform: rotate(-135deg);
+  }
+  /* --- Fin Menú Hamburguesa --- */
+
+  .seccion-nosotros {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .container-full {
+    padding: 2.5rem 0;
+  }
+
+  .card-servicio {
+    flex-basis: 100%; /* 1 columna */
+  }
+
+  .seccion-clientes {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .card-cliente {
+    flex-basis: 120px; /* Más pequeños en móvil */
+  }
+
+  .layout-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-enlaces ul {
+    justify-content: center;
+  }
+}
+
+/* Estilos de la sección de contacto (movidos desde estilos.css) */
+.seccion-contacto {
+  background-color: var(--color-fondo-alternativo);
+}
+
+.layout-contacto {
+  display: flex;
+  gap: 3rem;
+}
+
+.contacto-formulario {
+  flex: 2; /* Ocupa 2/3 */
+}
+
+.contacto-info {
+  flex: 1; /* Ocupa 1/3 */
+  background-color: var(--color-primario);
+  color: var(--color-texto-secundario);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.contacto-info h3 {
+  color: var(--color-texto-secundario);
+  border-bottom: 2px solid var(--color-secundario);
+  padding-bottom: 0.5rem;
+}
+
+.contacto-info p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.contacto-info ul {
+  margin-top: 1.5rem;
+}
+
+.contacto-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.contacto-info li svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.contacto-redes {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.contacto-redes a {
+  color: var(--color-texto-secundario);
+}
+
+.contacto-redes svg {
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+}
+
+.contacto-redes a:hover svg {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Formulario */
+.grupo-form {
+  margin-bottom: 1.5rem;
+}
+
+.grupo-form label {
+  display: block;
+  font-family: var(--font-texto);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.grupo-form input,
+.grupo-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-borde-suave);
+  border-radius: 5px;
+  font-family: var(--font-texto);
+  font-size: 1rem;
+}
+
+.grupo-form input:focus,
+.grupo-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 5px rgba(11, 37, 69, 0.2);
+}
+
+/* Ajuste responsive de la sección contacto */
+@media (max-width: 1024px) {
+  .layout-contacto {
+    flex-direction: column;
+  }
+}
