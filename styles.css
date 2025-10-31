@@ -190,7 +190,7 @@ ul {
   text-align: center;
   color: var(--color-texto-secundario);
   position: relative;
-  background-image: url("assets/puerto-aduanero.jpg");
+  background-image: url("assets/puerto-aduanero.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
