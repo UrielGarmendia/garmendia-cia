@@ -178,7 +178,7 @@ ul {
   text-align: center;
   color: var(--color-texto-secundario);
   position: relative;
-  background-image: url("./assets/puerto-arg.jpg");
+  background-image: url("./assets/puerto-arg.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
