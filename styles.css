@@ -1,23 +1,15 @@
-/* ============================================= */
-/* ESTILOS.CSS - GARMENDIA Y CÍA S.A. */
-/* ============================================= */
-
-/* --- 1. CONFIGURACIÓN BASE Y VARIABLES --- */
 :root {
-  /* Paleta de Colores (Corporativo) */
-  --color-primario: #0b2545; /* Azul oscuro corporativo */
-  --color-secundario: #134074; /* Azul hover */
+  --color-primario: #0b2545;
+  --color-secundario: #134074;
   --color-fondo: #ffffff;
   --color-fondo-alternativo: #f5f5f5;
   --color-texto-principal: #333333;
   --color-texto-secundario: #ffffff;
   --color-borde-suave: #e0e0e0;
 
-  /* Tipografía */
   --font-titulo: "Montserrat", sans-serif;
   --font-texto: "Open Sans", sans-serif;
 
-  /* Responsive */
   --header-height: 80px;
 }
 
@@ -30,8 +22,8 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -39,7 +31,6 @@ body {
   background-color: var(--color-fondo);
   color: var(--color-texto-principal);
   line-height: 1.7;
-  /* Agrega padding al top para compensar el header fijo */
   padding-top: var(--header-height);
 }
 
@@ -190,7 +181,7 @@ ul {
   text-align: center;
   color: var(--color-texto-secundario);
   position: relative;
-  background-image: url("assets/puerto-aduanero.webp");
+  background-image: url("assets/puerto-arg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
