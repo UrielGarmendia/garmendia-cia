@@ -508,6 +508,7 @@ ul {
 
 .footer-enlaces a:hover {
   color: var(--color-fondo);
+  border-bottom: var(--color-fondo-alternativo) solid 2px;
 }
 
 /* media queries */
@@ -549,7 +550,7 @@ ul {
   }
 
   .logo img {
-    height: 140px;
+    height: 170px;
     margin-left: -15px;
   }
 
@@ -629,6 +630,11 @@ ul {
   #menu-toggle:checked + .menu-icon span:nth-child(3) {
     top: 9px;
     transform: rotate(-135deg);
+  }
+
+  .nosotros-texto {
+    flex: 1;
+    text-align: center;
   }
 
   .seccion-nosotros {
